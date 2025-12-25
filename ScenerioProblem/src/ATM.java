@@ -1,21 +1,17 @@
 //Q1. ATM Withdrawal System
-//
+
 //Scenario:
 //An ATM allows withdrawal only if balance is sufficient.
-//
+
 //Rules:
-//
 //Take account balance
-//
 //Take withdrawal amount
-//
 //If withdrawal amount ≤ balance → allow withdrawal
-//
 //Else → display “Insufficient Balance”
-//
+
 //Task:
 //Write a Java program to perform ATM withdrawal.
-//
+
 //Concepts Tested:
 //Scanner, if-else, variables, operators
 
