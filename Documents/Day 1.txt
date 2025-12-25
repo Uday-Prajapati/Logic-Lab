@@ -1,0 +1,24 @@
+1.Reverse a String
+	Task: Print the reverse of a given string.
+	Example Input: "Mumbai"
+	Expected Output: "iabmuM"
+ 
+2.Find the smallest element in an array
+	Task: Given an integer array, find and print the minimum value using a for loop.
+	Example Input: {10, -3, 25, 7, 0}
+	Expected Output: -3
+ 
+3.Find if given Integer is a prime Number or not
+	Task: Given an integer element print if given integer is an prime number or not
+	Example Input: 17
+	Expected Output: 17 is an Prime number
+ 
+4.Count frequency of each letter (a–z)
+	Task: Given a string, count how many times each letter a–z appears (Assume all characters are lowercase; skip non-letters). Print letters with non-zero counts.
+	Example Input: "bab!!" (Assume all letters in String are lowercase.)
+	Expected Output: b:2, a:1
+ 
+5.Reverse a String but skip non-letter characters
+	Task: Reverse only the letters in the string. Non-letters stay in place.
+	Example Input: "a,b$c"
+	Expected Output: "c,b$a"
