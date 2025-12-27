@@ -1,0 +1,119 @@
+✅ 1. Temperature Converter
+
+Topic: Variables & Operators
+Task: Convert temperature from Celsius to Fahrenheit and vice versa. Ask the user which conversion they want.
+Example Input:
+Choice: CtoF
+Value: 37
+
+Expected Output:
+Fahrenheit = 98.6
+
+
+
+✅ 2. Student Grade Calculator
+
+Topic: Control Flow
+Task: Read marks of 5 subjects, calculate percentage, and assign grade:
+
+A: ≥90
+B: ≥75
+C: ≥60
+D: ≥40
+F: <40
+Example Input: 80 90 85 70 75
+Expected Output:
+Percentage = 80.0
+Grade = B
+
+
+
+✅ 3. Print Pattern (Loops)
+
+Topic: Loops
+Task: Print the following pattern for n=4:
+
+
+
+*
+* *
+* * *
+* * * *
+
+
+
+✅ 4. Reverse Words in a Sentence
+
+Topic: Strings
+Task: Given a sentence, reverse each word but keep the word order same.
+Example Input: "Java is fun"
+Expected Output: "avaJ si nuf"
+
+
+
+✅ 5. Find Second Largest Number
+
+Topic: Arrays
+Task: Given an array, find the second largest element without sorting.
+Example Input: {10, 25, 7, 30, 15}
+Expected Output: 25
+
+
+
+✅ 6. Palindrome Checker
+
+Topic: Strings & Methods
+Task: Write a method isPalindrome(String s) that checks if a string is a palindrome. Ignore case.
+Example Input: "Madam"
+Expected Output: Palindrome
+
+
+
+✅ 7. Sum of Even and Odd Numbers Separately
+
+Topic: Loops & Control Flow
+Task: Read n numbers and print sum of even numbers and sum of odd numbers separately.
+Example Input: 5 numbers: 2 3 4 5 6
+Expected Output:
+Sum of Even = 12
+Sum of Odd = 8
+
+
+
+✅ 8. Count Frequency of Each Word
+
+Topic: Strings & Arrays
+Task: Given a sentence, count how many times each word appears.
+Example Input: "Java is fun and Java is powerful"
+Expected Output:
+Java: 2
+is: 2
+fun: 1
+and: 1
+powerful: 1
+
+
+
+✅ 9. Factorial Using Recursion
+
+Topic: Methods
+Task: Write a recursive method factorial(int n) and print factorial of a given number.
+Example Input: 5
+Expected Output: 120
+
+
+
+✅ 10. Simple ATM Simulation
+
+Topic: Control Flow & Loops
+Task: Simulate an ATM with options:
+
+Check Balance
+Deposit
+Withdraw
+Exit
+Start with balance = 1000.
+Example Interaction:
+Choice: 2
+Enter amount: 500
+New Balance: 1500
