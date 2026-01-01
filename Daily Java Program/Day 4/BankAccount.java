@@ -59,30 +59,30 @@ public class BankAccount {
 	}
 
 	public static void main(String[] args) {
-//		BankAccount acc = new BankAccount("uday", 1000.0);
-//		acc.deposit(500);
-//		acc.withdraw(300);
-//		System.out.println(acc.getBalance());
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter name: ");
-		String owner = sc.nextLine();
-		
-		System.out.println("Enter current balance: ");
-		double balance = sc.nextDouble();
-		
-		// object
-		BankAccount acc = new BankAccount(owner, balance);
-		
-		System.out.println("Enter deposit: ");
-		double depositAmount = sc.nextDouble();
-		acc.deposit(depositAmount);
-		
-		System.out.println("Enter withdraw: ");
-		double withdrawAmount = sc.nextDouble();
-		acc.withdraw(withdrawAmount);
-		
+		BankAccount acc = new BankAccount("uday", 1000.0);
+		acc.deposit(500);
+		acc.withdraw(300);
 		System.out.println(acc.getBalance());
+		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter name: ");
+//		String owner = sc.nextLine();
+//		
+//		System.out.println("Enter current balance: ");
+//		double balance = sc.nextDouble();
+//		
+//		// object
+//		BankAccount acc = new BankAccount(owner, balance);
+//		
+//		System.out.println("Enter deposit: ");
+//		double depositAmount = sc.nextDouble();
+//		acc.deposit(depositAmount);
+//		
+//		System.out.println("Enter withdraw: ");
+//		double withdrawAmount = sc.nextDouble();
+//		acc.withdraw(withdrawAmount);
+//		
+//		System.out.println(acc.getBalance());
 	}
 
 }

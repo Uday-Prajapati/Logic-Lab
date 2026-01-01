@@ -1,0 +1,327 @@
+1) Expression Evaluator (No eval)
+Objective: Parse and evaluate a simple arithmetic expression string like "12 + 3 * 4 - 5 / 2".
+Requirements
+
+Support + - * / with correct precedence (* / > + -).
+Tokenize the input string using loops and string methods only.
+Disallow floating-point; perform integer arithmetic (truncate division).
+Use a method int evaluate(String expr) that returns the result.
+Use Integer.parseInt, Character.isDigit (wrapper class utilities).
+Use at least one for loop and one while loop; use continue to skip spaces.
+Validate input; if invalid, print a message and exit gracefully.
+
+Input (console)
+12 + 3 * 4 - 5 / 2
+
+Output
+Result: 21
+
+Constraints
+
+No external libraries; no ScriptEngine.
+Comment your tokenizer and parser logic with clear block comments.
+Follow naming conventions and small, cohesive methods.
+
+
+2) Command-Line Gradebook
+Objective: Maintain grades for students using arrays and methods.
+Requirements
+
+Read n (number of students), then read n names and n integer grades (0–100).
+Store names in String[], grades in int[].
+Provide menu:
+
+Print all
+Print topper
+Class average
+Search by name (case-insensitive)
+Curve grades by +5 (cap at 100)
+Exit
+
+
+Implement each option in a separate method.
+Use while(true) loop with break to exit; use continue on invalid menu choice.
+Use String.equalsIgnoreCase, Character.toUpperCase where needed.
+
+Sample Input
+3
+Alice
+90
+bob
+82
+Charlie
+76
+1
+2
+3
+4
+Bob
+6
+
+Sample Output (partial)
+All: Alice(90), bob(82), Charlie(76)
+Topper: Alice(90)
+Average: 82.67
+Found: bob(82)
+Exiting...
+
+Constraints
+
+Use double for average; format to 2 decimals.
+Validate input bounds; handle empty names.
+Add Javadoc for each method.
+
+
+3) Robust String Analytics
+Objective: Analyze a line of text.
+Requirements
+
+Read a line of text.
+Compute:
+
+Number of words (split by whitespace).
+Number of sentences (. ! ?).
+Longest word.
+Count of digits vs letters (use Character.isDigit, Character.isLetter).
+Frequency of each vowel (a, e, i, o, u) case-insensitive.
+
+
+Use arrays to store counts (int[5] for vowels).
+Provide a method int[] countVowels(String s).
+Use for and do-while (use do-while to force at least one read loop if input is empty).
+
+Sample Input
+Hello, world! Java 17 is amazing.
+
+Sample Output (partial)
+Words: 5
+Sentences: 2
+Digits: 2, Letters: 21
+Longest word: "amazing"
+Vowel freq: a=4 e=1 i=1 o=2 u=0
+
+Constraints
+
+Avoid regex; use manual scanning with loops and conditionals.
+Clean punctuation when finding longest word.
+
+
+4) Mini ATM Simulator
+Objective: Simulate simple bank operations.
+Requirements
+
+Variables: balance (double), pin (int).
+Menu:
+
+1) Deposit
+2) Withdraw
+3) Check Balance
+4) Change PIN
+5) Exit
+
+
+Use input validation; disallow negative amounts.
+Require PIN on sensitive actions (withdraw, change PIN).
+Use while loop for menu, break to exit, continue for invalid choices.
+Methods: deposit, withdraw, changePin, printBalance.
+Use operators extensively: relational, logical, assignment.
+
+Sample Interaction (partial)
+Enter option: 1
+Amount: 500
+Deposited. Balance: 500.00
+Enter option: 2
+Enter PIN: 1234
+Amount: 300
+Withdrawn. Balance: 200.00
+
+Constraints
+
+Format money to 2 decimals.
+Inline comments explaining business rules.
+
+
+5) Calendar: Day of Week (Zeller’s Congruence)
+Objective: Given date (dd mm yyyy), compute day of week (Sun–Sat).
+Requirements
+
+Implement Zeller’s Congruence using integer math only.
+Use input validation: ranges for day/month; handle leap years.
+Use method String dayOfWeek(int d, int m, int y).
+Use arrays for mapping index→day name: String[] days = {...}.
+
+Sample Input
+25 12 2025
+
+Sample Output
+Thursday
+
+Constraints
+
+Clear comments for formula steps.
+Use if-else and arithmetic operators carefully.
+No library date classes.
+
+
+6) Compressed Run-Length Encoding (RLE) with Options
+Objective: Implement RLE for strings with CLI options.
+Requirements
+
+Menu:
+
+1) Compress
+2) Decompress
+3) Exit
+
+
+Compress rule: "aaabbc" → "a3b2c1".
+Decompress rule: "a3b2c1" → "aaabbc".
+Validate input (letters only in compress; correct format in decompress).
+Use StringBuilder and wrapper class parsing (Character.isDigit, Integer.parseInt for counts).
+Use for loop with continue to skip invalid chars.
+
+Sample Input/Output
+1
+aaabbc
+a3b2c1
+
+Constraints
+
+Disallow counts > 9 unless you implement multi-digit parsing (bonus).
+Separate methods: compress, decompress, isValidEncoded.
+
+
+7) Matrix Operations Toolkit (2D Arrays)
+Objective: Operate on integer matrices.
+Requirements
+
+Read dimensions r and c (2–10).
+Read two r x c matrices.
+Menu:
+
+1) Add
+2) Subtract
+3) Multiply (r x c ⋅ c x k)
+4) Transpose (first matrix)
+5) Row/Column sums
+6) Exit
+
+
+Use nested for loops.
+Methods: add(int[][] A, int[][] B), etc.
+
+Sample Input (partial)
+2 2
+1 2
+3 4
+5 6
+7 8
+1
+
+Sample Output (partial)
+Add:
+6 8
+10 12
+
+Constraints
+
+Validate dimensions for multiplication.
+Comment the triple-loop multiplication order.
+
+
+8) Robust Password Validator
+Objective: Validate passwords with multiple rules.
+Requirements
+
+Read a password string.
+Rules:
+
+Length 8–20
+At least one uppercase, lowercase, digit, special (!@#$%^&*).
+No spaces.
+Must not contain the username (ask for username separately).
+
+
+Use wrappers (Character.isUpperCase, etc.).
+Methods: boolean isValid(String pwd, String user), String feedback(String pwd, String user).
+Use for loop scanning; continue on non-contributing characters.
+
+Sample Input
+username: sarthak
+password: S@rthak123
+
+Sample Output
+Invalid: contains username sequence "arthak".
+Feedback:
+- Avoid using parts of your name.
+- Add more special characters.
+
+Constraints
+
+Provide clear comments and structured code.
+Use String.contains, case-insensitive check via .toLowerCase().
+
+
+9) Number Stream Aggregator (Sentinel & Stats)
+Objective: Read integers until sentinel -999 and compute stats.
+Requirements
+
+Stats: count, sum, min, max, average, median, mode.
+Use an ArrayList (if not allowed yet, use arrays with dynamic resizing strategy).
+Use while(true) reading; exit on -999 using break.
+Methods:
+
+int min(int[] a), int max(int[] a)
+double average(int[] a)
+int mode(int[] a)
+double median(int[] a)
+
+
+Use wrapper operations as needed (Integer.compare, Math ops).
+
+Sample Input
+10 20 20 30 40 20 -999
+
+Sample Output
+Count=6, Sum=140, Min=10, Max=40, Avg=23.33, Median=25.00, Mode=20
+
+Constraints
+
+Validate non-integer input with Scanner.hasNextInt() and skip using continue.
+Format doubles to 2 decimals.
+
+
+10) CLI Phonebook with Partial Match & Commands
+Objective: Manage contacts with name and phone.
+Requirements
+
+Store up to 100 contacts in parallel arrays String[] names, String[] phones.
+Commands:
+
+ADD name phone
+DEL name
+FIND substring (case-insensitive)
+LIST
+EXIT
+
+
+Parse commands with String.split(" "), careful about spaces in names (handle quoted names, bonus).
+Use for loops for search; continue for empty lines.
+Methods: add, delete, find, list.
+
+Sample Interaction (partial)
+ADD Alice 9876543210
+ADD Bob 9123456789
+FIND li
+LIST
+EXIT
+
+Sample Output
+Found: Alice(9876543210)
+Alice(9876543210), Bob(9123456789)
+Goodbye.
+
+Constraints
+
+Validate phone: exactly 10 digits (Character.isDigit).
+Use comments to explain command parsing.

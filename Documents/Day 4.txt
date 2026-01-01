@@ -1,0 +1,289 @@
+Java OOP & Basics – Practice Set 
+
+1) Stopwatch (Class & Basic Object Use)
+Question:
+Implement a Stopwatch class that simulates time using a loop-based tick counter.
+Requirements:
+
+Private fields: boolean running, int ticks
+Public methods:
+
+void start(): sets running = true
+void stop(): sets running = false
+void reset(): sets ticks = 0
+int elapsed(): returns ticks
+
+
+Constraint: Do not use System.currentTimeMillis(). In main, simulate time by incrementing ticks in a loop only when running.
+
+Usage Example:
+
+Stopwatch sw = new Stopwatch();
+sw.start();
+for (int i = 0; i < 1000; i++) { // simulate ticks
+    if (sw.isRunning()) { // optional helper if you add it
+        sw.incrementTick(); // or encapsulate tick logic inside start/stop
+    }
+}
+sw.stop();
+System.out.println(sw.elapsed()); // expected: 1000
+sw.reset();
+Tip: Keep running and ticks private; expose ticking via controlled methods.
+
+
+2) Rectangle with Encapsulation
+Question:
+Create a Rectangle with encapsulated width and height. Validate inputs.
+Requirements:
+
+Private fields: double width, double height
+Getters: getWidth(), getHeight()
+Setters: setWidth(double w), setHeight(double h) — accept only positive values.
+Bonus: If w or h is 0 or negative, silently reject (do not change the value).
+Methods: double area(), double perimeter()
+
+Usage Example:
+
+Rectangle r = new Rectangle();
+r.setWidth(10);
+r.setHeight(5);
+System.out.println(r.area());      // 50.0
+System.out.println(r.perimeter()); // 30.0
+r.setWidth(0); // silently rejected (bonus)
+
+3) Student with Read‑only ID (final)
+Question:
+Create a Student class where id is immutable.
+Requirements:
+
+Fields: final int id, private String name
+Constructor: sets id
+Methods: int getId(), String getName(), void setName(String name)
+Constraint: id must not be modifiable after construction (compile-time enforced by final).
+
+Usage Example:
+
+Student s = new Student(101);
+s.setName("Alice");
+System.out.println(s.getId()); // 101
+// s.id = 202; // should not compile
+
+4) MathUtil (Static Utility Methods)
+Question:
+Implement a MathUtil class with static helper methods.
+Requirements:
+
+Methods:
+
+public static int max(int a, int b)
+public static int clamp(int v, int min, int max)
+
+
+Constraint: No instance state; no fields.
+
+Usage Example:
+
+System.out.println(MathUtil.max(7, 3));            // 7
+System.out.println(MathUtil.clamp(15, 0, 10));     // 10
+System.out.println(MathUtil.clamp(-3, -2, 5));     // -2
+
+5) Config (Static Constants)
+Question:
+Create a Config class of public constants and print them.
+Requirements:
+
+Public constants: public static final String APP_NAME, VERSION
+Public constant: public static final int MAX_USERS
+Constraint: All are public static final.
+
+Usage Example:
+
+System.out.println(MathUtil.max(7, 3));            // 7
+System.out.println(MathUtil.clamp(15, 0, 10));     // 10
+System.out.println(MathUtil.clamp(-3, -2, 5));     // -2
+
+6) BankAccount with Access Control
+Question:
+Implement a BankAccount with validation and access control.
+Requirements:
+
+Private fields: String owner, double balance
+Methods:
+
+void deposit(double amount) — only positive amounts
+void withdraw(double amount) — must not exceed balance
+String getOwner(), double getBalance()
+
+
+Bonus: Add protected void applyFee(double fee) to simulate internal fees (for a future subclass).
+
+Usage Example:
+BankAccount acc = new BankAccount("Sarthak", 1000.0);
+acc.deposit(500);acc.withdraw(300);
+System.out.println(acc.getBalance()); // 1200.0 
+
+7) Counter with Static Instance Count
+Question:
+Create a Counter that tracks how many instances were created.
+Requirements:
+
+Fields: private int value
+Static field: public static int instances
+Constructor: increments instances
+Methods: void increment(), void decrement(), int getValue()
+
+Usage Example:
+Counter a = new Counter();
+Counter b = new Counter();
+Counter c = new Counter();
+System.out.println(Counter.instances); // 3
+
+8) Temperature (Immutable-like Pattern)
+Question:
+Build an immutable-like Temperature with a Celsius base.
+Requirements:
+
+Field: private final double celsius
+Methods:
+
+double toFahrenheit()
+Temperature withCelsius(double c) — returns new object with updated celsius
+
+Constraint: No setters.
+
+Usage Example:
+Temperature t = new Temperature(25.0);
+System.out.println(t.toFahrenheit()); // 77.0
+Temperature t2 = t.withCelsius(30.0); // t unchanged
+
+9) AccessDemo (Modifiers in Same Package)
+Question:
+Create AccessDemo with methods of different access modifiers and call them from another class in the same package.
+Requirements:
+
+Methods: public, protected, default (package-private), and private
+In another class (same package), attempt to call all four and observe which are callable.
+
+Observation:
+Public, protected, and default are callable; private is not callable.
+
+10) IDGenerator (Static Sequencing)
+Question:
+Create an ID generator and use it to assign IDs in a User class.
+Requirements:
+
+IDGenerator:
+
+Field: private static int next = 1000
+Method: public static int nextId() — returns current, then increments
+
+
+User:
+
+Field: final int id — assigned via IDGenerator.nextId() in constructor
+Optional field: String name
+
+
+
+Usage Example:
+User u1 = new User("A");
+User u2 = new User("B");
+System.out.println(u1.getId()); // 1000
+System.out.println(u2.getId()); // 1001Show more lines
+
+
+11) LibraryBook with Encapsulation & Static Catalog Count
+Question:
+Create a LibraryBook with issue/return logic and static tracking of total books.
+Requirements:
+
+Fields: private String title, author, private boolean issued
+Static field: public static int totalBooks — incremented in constructor
+Methods:
+
+void issue() — only if not already issued
+void returnBook() — only if currently issued
+boolean isIssued()
+
+Usage Example:
+LibraryBook b = new LibraryBook("1984", "Orwell");
+b.issue();      // true path
+b.issue();      // should reject (already issued)
+b.returnBook(); // true path
+
+
+12) Vector2D with Final Constants and Static Factory
+Question:
+Implement a 2D vector with constants and polar factory.
+Requirements:
+
+Fields: private double x, y
+Constants: public static final Vector2D ZERO, UNIT_X, UNIT_Y
+Static factory: public static Vector2D fromPolar(double r, double theta)
+Instance methods: Vector2D add(Vector2D other), Vector2D scale(double s), double magnitude()
+Constraint: Ensure constants are immutable — either make fields final and no mutators, or return new objects for operations without modifying the constants.
+
+Usage Example:
+
+Vector2D v = Vector2D.fromPolar(2, Math.PI/2); // (0,2)
+Vector2D w = Vector2D.UNIT_X.add(v);           // (1,2)
+
+13) Employee with Encapsulation + Salary Rules
+Question:
+Create Employee with validation for name and salary, plus raises.
+Requirements:
+
+Fields: private String name, private double salary
+Methods:
+
+void setName(String name) — must be non-empty
+void setSalary(double s) — must be within 10000–500000
+void raise(double percent) — adds percent to salary; validate 0–100
+
+
+Constraint: On invalid input, print a message (no exceptions).
+
+Usage Example:
+Employee e = new Employee();e.setName("");          // prints 
+invalide.setSalary(9000);      // prints 
+invalide.setSalary(120000);
+e.raise(10);            // salary -> 132000
+e.raise(200);           // prints invalid
+
+14) AccountNumber (Final Immutability + Static Checksum)
+Question:
+Implement an AccountNumber with a 12-digit invariant and static validation.
+Requirements:
+
+Field: private final String digits — must be exactly 12 digits
+Static method: public static boolean isValid(String s) — checks length & all digits
+Constructor: if s is valid, set digits; else set default "000000000000" and print "Invalid account number"
+
+Usage Example:
+AccountNumber a = new AccountNumber("123456789012"); // valid
+AccountNumber b = new AccountNumber("ABC");          // prints invalid, uses default
+
+15) SingletonLogger (Static Instance + Private Constructor)
+Question:
+Implement a lazily-initialized singleton logger and verify single instance behavior.
+Requirements:
+
+Fields:
+
+private static SingletonLogger instance
+private SingletonLogger() (private constructor)
+private static final String PREFIX = "[APP] "
+
+
+Methods:
+
+public static SingletonLogger getInstance() — create on first call
+public void log(String msg) — prints "[APP] " + msg
+
+
+Constraint: In main, verify that multiple getInstance() calls return the same object (compare references).
+
+Usage Example:
+SingletonLogger l1 = SingletonLogger.getInstance();
+SingletonLogger l2 = SingletonLogger.getInstance();
+System.out.println(l1 == l2); // truel1.log("Started");            // [APP] Started

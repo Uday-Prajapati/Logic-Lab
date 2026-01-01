@@ -10,6 +10,7 @@
 //void stop(): sets running = false
 //void reset(): sets ticks = 0
 //int elapsed(): returns ticks
+
 import java.util.Scanner;
 public class Stopwatch {
 	private boolean running;
@@ -42,36 +43,36 @@ public class Stopwatch {
 	}
 	
 	public static void main(String[] args) {
-//		Stopwatch sw = new Stopwatch();
-//		sw.start();
-//		
-//		for (int i = 0; i < 1000; i++) { // simulate ticks
-//		    if (sw.isRunning()) { // optional helper if you add it
-//		        sw.incrementTick(); // or encapsulate tick logic inside start/stop
-//		    }
-//		}
-//		
-//		sw.stop();
-//		System.out.println(sw.elapsed()); // expected: 1000
-//		sw.reset();
-		
-		
-		// user input
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter no of ticks to simulate: ");
-		int numTicks = sc.nextInt();
-		
 		Stopwatch sw = new Stopwatch();
 		sw.start();
 		
-		for(int i = 0; i<numTicks; i++) {
-			sw.incrementTick();
+		for (int i = 0; i < 1000; i++) { // simulate ticks
+		    if (sw.isRunning()) { // optional helper if you add it
+		        sw.incrementTick(); // or encapsulate tick logic inside start/stop
+		    }
 		}
 		
 		sw.stop();
-		System.out.println("Elapsed: " + sw.elapsed());
-		
+		System.out.println(sw.elapsed()); // expected: 1000
 		sw.reset();
-		System.out.println("Reset: " + sw.elapsed());
+		
+		
+		// user input
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter no of ticks to simulate: ");
+//		int numTicks = sc.nextInt();
+//		
+//		Stopwatch sw = new Stopwatch();
+//		sw.start();
+//		
+//		for(int i = 0; i<numTicks; i++) {
+//			sw.incrementTick();
+//		}
+//		
+//		sw.stop();
+//		System.out.println("Elapsed: " + sw.elapsed());
+//		
+//		sw.reset();
+//		System.out.println("Reset: " + sw.elapsed());
 	}
 }

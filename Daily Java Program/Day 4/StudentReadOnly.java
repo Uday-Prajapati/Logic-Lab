@@ -1,3 +1,20 @@
+//3) Student with Read‑only ID (final)
+//Question:
+//Create a Student class where id is immutable.
+//Requirements:
+//
+//Fields: final int id, private String name
+//Constructor: sets id
+//Methods: int getId(), String getName(), void setName(String name)
+//Constraint: id must not be modifiable after construction (compile-time enforced by final).
+//
+//Usage Example:
+//
+//Student s = new Student(101);
+//s.setName("Alice");
+//System.out.println(s.getId()); // 101
+//// s.id = 202; // should not compile
+
 import java.util.Scanner;
 
 public class StudentReadOnly {
@@ -26,23 +43,25 @@ public class StudentReadOnly {
 	}
 
 	public static void main(String[] args) {
-//		StudentReadOnly s = new StudentReadOnly(101);
-//		s.setName("Uday");
-//		System.out.println(s.getId());
-//		s.id = 202;
-// 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the id: ");
-		int id = sc.nextInt();
-		sc.nextLine();
-		
 		StudentReadOnly s = new StudentReadOnly(101);
+		s.setName("Uday");
+		System.out.println(s.getId());
+//		s.id = 202;
+ 
 		
-		System.out.println("Enter the name: ");
-		String name = sc.nextLine();
-		s.setName(name);
-		
-		System.out.println("Student ID: " + s.getId());
-		System.out.println("Student Name: " + s.getName());
+		// user input
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the id: ");
+//		int id = sc.nextInt();
+//		sc.nextLine();
+//		
+//		StudentReadOnly s = new StudentReadOnly(101);
+//		
+//		System.out.println("Enter the name: ");
+//		String name = sc.nextLine();
+//		s.setName(name);
+//		
+//		System.out.println("Student ID: " + s.getId());
+//		System.out.println("Student Name: " + s.getName());
 	}
 }
