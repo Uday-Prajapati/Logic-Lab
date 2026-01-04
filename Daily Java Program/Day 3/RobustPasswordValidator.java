@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class RobustPasswordValidator {
-	// condtiono for password
+	// condtion for password
 	static boolean isValid(String pwd, String user) {
 		// At least one uppercase, lowercase, digit, special (!@#$%^&*). No spaces.
 		
