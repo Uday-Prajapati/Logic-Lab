@@ -9,7 +9,7 @@ public class UserInterface {
 		System.out.println("Enter the number");
 		int num = sc.nextInt();
 		
-		// validation
+		// validation , digit must be of 4
 		if(num < 1000 || num > 9999) {
 			System.out.println(num + " is an invalid number");
 			return;
