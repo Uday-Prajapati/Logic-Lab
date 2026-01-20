@@ -17,7 +17,7 @@ public class UserInterface
 		if(!id.matches(idregex)) {
 			System.out.println(id + " is an Invalid ID");
 			return;
-		}+
+		}
 		
 		String seatNumber = id.substring(3,6);
 		String time = id.substring(6,8);
