@@ -20,11 +20,15 @@ public class UserInterface {
 			if(choice == 1) {
 				System.out.println("Enter the product");
 				String productName = sc.nextLine();
+				
+				// add the product to list
 				p.addProductToList(productName);
 			}
+			
 			else if(choice == 2) {
 				if(p.getProductList().isEmpty()) {
 					System.out.println("The list is empty");
+					return;
 				}else {
 					p.sortProductList();
 					for(String product : p.getProductList()) {
@@ -37,6 +41,5 @@ public class UserInterface {
 				break;
 			}
 		}
-		
 	}
 }

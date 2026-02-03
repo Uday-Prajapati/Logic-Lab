@@ -29,15 +29,12 @@ public class UserInterface{
        }        
        
        Arrays.sort(arr);
-       
        int maxSum = Integer.MIN_VALUE;
        
-       // n/2 for max + min
-       for(int i = 0; i<n/2; i++) {
-    	   
-    	   // arr[i] minimum
-    	   // arr[n - 1 - i] maxmum
-    	   int sum = arr[i] + arr[n - 1 - i];
+       for(int i=0; i<n/2; i++) {
+    	   // arr[i] - max
+    	   // arr[n-1-i] - minimum
+    	   int sum = arr[i] + arr[n-1-i];
     	   if(sum > maxSum) {
     		   maxSum = sum;
     	   }

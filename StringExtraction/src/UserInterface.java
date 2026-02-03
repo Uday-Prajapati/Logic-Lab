@@ -25,7 +25,7 @@ public class UserInterface {
         String message = "";
 
         try {
-            String output = sentence.substring(number1, number2);
+            String output = sentence.substring(number1, number2); // substring
             message = "The output string is " + output + ".";
         } catch (StringIndexOutOfBoundsException e) {
             message = "Invalid index position.";

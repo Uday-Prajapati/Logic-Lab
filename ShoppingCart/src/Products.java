@@ -2,25 +2,23 @@ import java.util.*;
 
 public class Products {
 
-	private List<String> productList=new ArrayList<String>();
-	
-	// Write code for getter and setter
-	public List<String> getProductList(){
+	private List<String> productList = new ArrayList<String>();
+
+	public List<String> getProductList() {
 		return productList;
 	}
-	
+
 	public void setProductList(List<String> productList) {
 		this.productList = productList;
 	}
 	
-	public void addProductToList(String product)
-	{
+	public void addProductToList(String product) {
 		productList.add(product);
 	}
-
-	public void sortProductList()
-	{
-		// code here
+	
+	public void sortProductList() {
 		Collections.sort(productList);
 	}
+	
+	
 }

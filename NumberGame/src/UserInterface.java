@@ -29,6 +29,7 @@ public class UserInterface{
     	   sum+=num[i];
        }
        
+       // prime number logic 
        int count = 0;
        for(int i=1; i<= sum; i++) {
     	   if(sum % i == 0) {
